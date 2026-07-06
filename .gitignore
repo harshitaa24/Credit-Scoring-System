@@ -1,0 +1,15 @@
+# Ignore trained models
+*.joblib
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE files
+.vscode/
+.idea/

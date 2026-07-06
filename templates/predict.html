@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prediction Result</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f2f5f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:600px;
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+h1{
+    color:#1f4e79;
+    margin-bottom:25px;
+}
+
+.result{
+    font-size:40px;
+    color:green;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.info{
+    margin-top:20px;
+    text-align:left;
+    line-height:2;
+    font-size:18px;
+}
+
+.button{
+    margin-top:35px;
+}
+
+button{
+    padding:12px 30px;
+    background:#1f4e79;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:17px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#163a5a;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Credit Score Prediction Result</h1>
+
+<p>Your predicted credit score is:</p>
+
+<div class="result">
+    {{ prediction }}
+</div>
+
+<div class="info">
+
+<p><strong>Age:</strong> {{ age }}</p>
+
+<p><strong>Annual Income:</strong> ₹{{ annual_income }}</p>
+
+<p><strong>Outstanding Debt:</strong> ₹{{ outstanding_debt }}</p>
+
+<p><strong>Credit Utilization Ratio:</strong> {{ utilization }}%</p>
+
+<p><strong>Number of Loans:</strong> {{ loans }}</p>
+
+</div>
+
+<div class="button">
+
+<form action="/" method="GET">
+
+<button type="submit">
+Predict Another Customer
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

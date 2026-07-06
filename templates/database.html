@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prediction Database</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f2f5f9;
+    padding:30px;
+}
+
+.container{
+    width:98%;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:#1f4e79;
+    margin-bottom:25px;
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+
+}
+
+th{
+
+    background:#1f4e79;
+    color:white;
+    padding:12px;
+
+}
+
+td{
+
+    padding:10px;
+    text-align:center;
+    border:1px solid #ddd;
+    font-size:14px;
+
+}
+
+tr:nth-child(even){
+
+    background:#f7f7f7;
+
+}
+
+tr:hover{
+
+    background:#eaf3ff;
+
+}
+
+button{
+
+    margin-top:25px;
+    padding:12px 25px;
+    background:#1f4e79;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#163a5a;
+
+}
+
+.center{
+
+    text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Prediction Database</h1>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Month</th>
+<th>Age</th>
+<th>Occupation</th>
+<th>Income</th>
+<th>Loans</th>
+<th>Debt</th>
+<th>Prediction</th>
+<th>Date & Time</th>
+
+</tr>
+
+{% for row in rows %}
+
+<tr>
+
+<td>{{ row[0] }}</td>
+
+<td>{{ row[1] }}</td>
+
+<td>{{ row[2] }}</td>
+
+<td>{{ row[3] }}</td>
+
+<td>{{ row[4] }}</td>
+
+<td>{{ row[8] }}</td>
+
+<td>{{ row[15] }}</td>
+
+<td><b>{{ row[23] }}</b></td>
+
+<td>{{ row[24] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<div class="center">
+
+<form action="/" method="GET">
+
+<button type="submit">
+
+New Prediction
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

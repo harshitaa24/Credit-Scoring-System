@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credit Score Prediction</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f2f5f9;
+    padding:30px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.15);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+}
+
+.section{
+    margin-bottom:25px;
+}
+
+.section h2{
+    margin-bottom:15px;
+    color:#1f4e79;
+    border-bottom:2px solid #ddd;
+    padding-bottom:5px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:15px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#1f4e79;
+    color:white;
+    font-size:18px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#163a5a;
+}
+
+@media(max-width:700px){
+.grid{
+grid-template-columns:1fr;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Credit Score Prediction</h1>
+
+<form action="/predict" method="POST">
+
+<div class="section">
+
+<h2>Personal Details</h2>
+
+<div class="grid">
+
+<input type="number" name="Age" placeholder="Age">
+
+<select name="Month">
+<option>January</option>
+<option>February</option>
+<option>March</option>
+<option>April</option>
+<option>May</option>
+<option>June</option>
+<option>July</option>
+<option>August</option>
+<option>September</option>
+<option>October</option>
+<option>November</option>
+<option>December</option>
+</select>
+
+<input type="text" name="Occupation" placeholder="Occupation">
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Income Details</h2>
+
+<div class="grid">
+
+<input type="number" step="0.01" name="Annual_Income" placeholder="Annual Income">
+
+<input type="number" step="0.01" name="Monthly_Inhand_Salary" placeholder="Monthly Inhand Salary">
+
+<input type="number" step="0.01" name="Monthly_Balance" placeholder="Monthly Balance">
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Bank Details</h2>
+
+<div class="grid">
+
+<input type="number" name="Num_Bank_Accounts" placeholder="Number of Bank Accounts">
+
+<input type="number" name="Num_Credit_Card" placeholder="Number of Credit Cards">
+
+<input type="number" name="Interest_Rate" placeholder="Interest Rate">
+
+<input type="number" name="Num_of_Loan" placeholder="Number of Loans">
+
+<select name="Type_of_Loan" required>
+
+    <option value="">Select Loan Type</option>
+
+    <option>Not Specified</option>
+
+    <option>Credit-Builder Loan</option>
+
+    <option>Personal Loan</option>
+
+    <option>Debt Consolidation Loan</option>
+
+    <option>Student Loan</option>
+
+    <option>Payday Loan</option>
+
+    <option>Mortgage Loan</option>
+
+    <option>Auto Loan</option>
+
+    <option>Home Equity Loan</option>
+
+    <option>Personal Loan, and Student Loan</option>
+
+    <option>Not Specified, and Payday Loan</option>
+
+    <option>Mortgage Loan, and Home Equity Loan</option>
+
+    <option>Student Loan, and Payday Loan</option>
+
+    <option>Credit-Builder Loan, and Not Specified</option>
+
+    <option>Student Loan, and Credit-Builder Loan</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Credit Details</h2>
+
+<div class="grid">
+
+<select name="Credit_Mix">
+<option>Good</option>
+<option>Standard</option>
+<option>Bad</option>
+</select>
+
+<input type="number" name="Credit_History_Age" placeholder="Credit History Age">
+
+<input type="number" step="0.01" name="Outstanding_Debt" placeholder="Outstanding Debt">
+
+<input type="number" step="0.01" name="Credit_Utilization_Ratio" placeholder="Credit Utilization Ratio">
+
+<input type="number" step="0.01" name="Changed_Credit_Limit" placeholder="Changed Credit Limit">
+
+<input type="number" name="Num_Credit_Inquiries" placeholder="Number of Credit Inquiries">
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Payment Details</h2>
+
+<div class="grid">
+
+<input type="number" name="Delay_from_due_date" placeholder="Delay From Due Date">
+
+<input type="number" name="Num_of_Delayed_Payment" placeholder="Number of Delayed Payments">
+
+<select name="Payment_of_Min_Amount">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<input type="text" name="Payment_Behaviour" placeholder="Payment Behaviour">
+
+<input type="number" step="0.01" name="Total_EMI_per_month" placeholder="Total EMI Per Month">
+
+<input type="number" step="0.01" name="Amount_invested_monthly" placeholder="Amount Invested Monthly">
+
+</div>
+
+</div>
+
+<button type="submit">Predict Credit Score</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
